@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The World in One Day — 19 November 2026</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 1024px; height: 1024px; margin: 0; background: #f7f2e7; }
+    body { color: #191714; font-family: "Noto Serif", "DejaVu Serif", serif; }
+    :root {
+      --navy: #0b1f3a;
+      --gold: #c9a227;
+      --labels: "DejaVu Sans", sans-serif;
+    }
+    .masthead { display: flex; align-items: center; gap: 19px; padding: 12px 24px; background: var(--navy); color: white; }
+    .date-badge { text-align: center; padding: 9px 10px; background: #af2925; font: 700 10px/1.3 var(--labels); }
+    .date-badge strong { display: block; font: 700 21px/1.1 "DejaVu Serif", serif; margin-bottom: 4px; }
+    .nameplate { color: var(--gold); font: 700 15px/1.1 var(--labels); letter-spacing: .13em; }
+    h1 { margin: 2px 0 1px; font-size: 34px; line-height: 1.12; }
+    .edition-note { margin: 0; color: var(--gold); font-size: 12px; font-style: italic; }
+    .strap { margin: 0 24px; padding: 6px 0; text-align: center; }
+    .count { border-bottom: 1px solid #a19886; font: small-caps 700 10px/1.1 var(--labels); letter-spacing: .14em; }
+    .headlines { border-bottom: 3px double #51483b; font-size: 12px; font-weight: 700; }
+    main { margin: 0 24px; }
+    .lead { display: grid; grid-template-columns: minmax(0, 1fr) 252px; gap: 18px; align-items: stretch; padding: 12px 0; border-bottom: 1px solid #51483b; }
+    .kicker, .proof { font: 700 10px/1.2 var(--labels); }
+    .kicker { margin: 0 0 5px; color: #9b1c1c; letter-spacing: .12em; }
+    .lead h2 { margin: 0 0 5px; font-size: 28px; line-height: 1.06; }
+    .summary { margin: 0; font-size: 12px; line-height: 1.4; }
+    .skyline { display: block; width: 100%; height: 100%; min-height: 130px; background: #e8dfcc; }
+    #tier-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; padding: 12px 0; }
+    .news-card { border-top: 5px solid var(--section); background: #fffdf6; padding: 9px 10px 10px; }
+    .news-card .kicker { color: var(--section); font-size: 9px; letter-spacing: .07em; }
+    .news-card h2 { margin: 0 0 6px; font-size: 21px; line-height: 1.05; }
+    .news-card p.copy { margin: 0; font-size: 11px; line-height: 1.35; }
+    .news-card .proof { color: var(--section); white-space: nowrap; font-size: 9px; }
+    .card-art { float: right; width: 110px; margin: 0 0 5px 10px; }
+    .card-art svg { display: block; width: 100%; height: 76px; border-radius: 2px; }
+    .news-card::after { content: ""; display: block; clear: both; }
+    .chart-title, .chart-labels { font: 700 8px/1.25 var(--labels); text-align: center; }
+    .chart-title { margin-bottom: 3px; color: #0f766e; }
+    .chart-labels { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 3px; }
+    .chart-labels strong { display: block; font-size: 9px; }
+    .ipo svg { height: 62px; }
+
+    /* Compact, unscaled layout for the square edition. */
+    .page-frame { width: 1024px; transform-origin: top center; }
+    .masthead { padding-block: 8px; }
+    .strap { padding-block: 3px; }
+    .lead { padding-block: 4px; grid-template-columns: minmax(0, 1fr) 218px; }
+    .lead h2 { font-size: 26px; }
+    .summary { font-size: 11px; line-height: 1.22; }
+    .skyline { min-height: 94px; height: 94px; background: #dceaf3; }
+    #tier-2 { gap: 3px 12px; padding-block: 4px; }
+    .news-card { border-top-width: 3px; padding: 2px 6px 3px; }
+    .news-card .kicker { margin-bottom: 2px; }
+    .news-card h2 { margin-bottom: 3px; font-size: 17px; }
+    .news-card p.copy { font-size: 10.5px; line-height: 1.15; }
+    .card-art { width: 74px; margin: 0 0 0 5px; }
+    .card-art svg { height: 41px; }
+    .ipo svg { height: 32px; }
+    .chart-title, .chart-labels { font-size: 7px; line-height: 1; }
+    .chart-labels strong { font-size: 8px; }
+    .chart-title, .chart-labels { margin-block: 1px; }
+
+    #section-stories { display: grid; grid-template-columns: repeat(16, minmax(0, 1fr)); gap: 3px 7px; margin-bottom: 3px; }
+    .regional-card { grid-column: span 3; border-top: 3px solid var(--section); background: #fffdf6; padding: 2px 4px 2px; }
+    .regional-card:nth-child(1), .regional-card:nth-child(4) { grid-column: span 5; }
+    .regional-card:nth-child(5), .regional-card:nth-child(6) { grid-column: span 6; }
+    .regional-card:nth-child(7) { grid-column: span 4; }
+    .regional-card svg { float: right; width: 28px; height: 22px; margin-left: 3px; }
+    .regional-card p { margin: 0; font-size: 10px; line-height: 1.12; }
+    .regional-card .kicker { color: var(--section); font: 700 8px/1.15 var(--labels); letter-spacing: .04em; margin-bottom: 2px; }
+    .regional-card h2 { margin: 0 0 2px; font-size: 13px; line-height: 1.05; }
+    .regional-card .proof { color: var(--section); font-size: 8px; white-space: nowrap; }
+
+    .panel-title { margin: 0; color: var(--navy); font: 700 12px/1.15 var(--labels); letter-spacing: .11em; }
+    #where-it-happened { display: grid; grid-template-columns: 190px 330px 1fr; align-items: center; gap: 10px; padding: 0 8px; border-block: 1px solid #c9bdab; background: #f0e8d9; }
+    #where-it-happened svg { display: block; width: 100%; height: 60px; }
+    .map-legend { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, max-content); gap: 2px 10px; font: 700 9px/1.05 var(--labels); }
+    .map-legend li::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 4px; border-radius: 50%; background: var(--section); }
+    .pin-head { stroke: #fff7e8; stroke-width: 1; }
+    .map-pin text { fill: white; text-anchor: middle; font: 700 9px var(--labels); }
+    .map-note { fill: #51483b; font: 700 9px var(--labels); }
+
+    #also-on-thursday { padding: 2px 0; }
+    #also-on-thursday ol { list-style: none; margin: 3px 0 0; padding: 0; display: grid; grid-auto-flow: column; grid-template-rows: repeat(14, auto); grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 14px; }
+    #also-on-thursday li { font: 10.2px/11px Arial, sans-serif; white-space: nowrap; }
+    #also-on-thursday b { display: inline-block; width: 17px; color: #9b1c1c; }
+    #utc-timeline { padding: 4px 7px; background: var(--navy); color: white; }
+    #utc-timeline .panel-title { color: white; }
+    #utc-timeline ol { list-style: none; margin: 3px 0 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+    #utc-timeline li { padding: 0 5px; border-left: 1px solid #6d7c8c; font: 9px/1.15 var(--labels); }
+    #utc-timeline time { display: block; color: #f4d16b; font-weight: 700; margin-bottom: 1px; }
+    #date-check { margin: 5px 0 6px; padding: 4px 6px; border: 1px solid #c8a59a; background: #fbefe6; font: 10px/1.2 Arial, sans-serif; }
+    #date-check strong { color: #9b1c1c; }
+  </style>
+</head>
+<body>
+  <div class="page-frame">
+  <header>
+    <div class="masthead">
+      <div class="date-badge"><strong>NOV 19</strong>THU · 2026</div>
+      <div>
+        <div class="nameplate">THE WORLD IN ONE DAY</div>
+        <h1>Thursday 19 November 2026</h1>
+        <p class="edition-note">Everything on this page happened, or was first reported, on Thursday 19 November 2026.</p>
+      </div>
+    </div>
+    <p class="strap count">42 STORIES · 7 REGIONS · ALL FROM THURSDAY</p>
+    <p class="strap headlines">TRUMP, XI AND PUTIN MEET IN SHENZHEN · ISRAELI TANKS PUSH ON IN GAZA · ANTHROPIC DEBUTS ON NASDAQ</p>
+  </header>
+  <main>
+    <article class="lead">
+      <div>
+        <p class="kicker">1 · SHENZHEN · SUMMIT</p>
+        <h2>TRUMP, XI AND PUTIN MEET IN SHENZHEN</h2>
+        <p class="summary">Donald Trump, Xi Jinping and Vladimir Putin meet in Shenzhen on Thursday for the first three-way summit of the sitting leaders of the US, China and Russia, on the sidelines of APEC. Trump meets Xi first at 12:45 WITA; the three-way talks follow at 14:30 WITA at Kylin Villa, with one hour allocated. Nuclear arms top the agenda after New START expired in February 2026, alongside Ukraine, the war with Iran, trade and AI, but no agreement is expected. <span class="proof">[NYT]</span></p>
+      </div>
+      <svg class="skyline" viewBox="0 0 252 130" role="img" aria-label="Schematic illustration of the Shenzhen skyline">
+        <circle cx="195" cy="37" r="20" fill="#c9a227" opacity=".55"/>
+        <path fill="#76a685" d="M0 95L29 70l22 17 29-23 30 20 22-13 36 14 29-20 26 16 29-12v46H0z"/>
+        <path fill="#588599" d="M8 109V86h20v23h5V72h23v37h52V64h24v45h36V81h18v28h26V78h22v31h12v8H8z"/>
+        <path fill="#254b75" d="M48 113V83h17v30h6L75 39l10-12 10 12 4 74h20V82h16v31h7l4-82 8-9h3V10h2v12h4l8 9 4 82h14V64h15v49h17V91h18v22h13v6H0v-6z"/>
+        <path fill="none" stroke="#d3bb75" opacity=".8" d="M82 46v57m8-57v57m62-64v64m7-64v64m7-64v64m29-32v29m5-29v29M0 124h252"/>
+      </svg>
+    </article>
+    <section id="tier-2" aria-label="Six major stories">
+      <article class="news-card" style="--section: #b45309">
+        <p class="kicker">2 · MIDDLE EAST · GAZA</p>
+        <h2>ISRAELI TANKS PUSH ON IN GAZA</h2>
+        <figure class="card-art">
+          <svg viewBox="0 0 110 76" role="img" aria-label="Colored schematic of a tank beside the Salah al-Din road">
+            <path fill="#edd5aa" d="M0 0h110v76H0z"/><path fill="#879197" d="M72 0h25v76H72z"/>
+            <path stroke="#f8e9ac" stroke-width="2" stroke-dasharray="8 6" d="M85 0v76"/>
+            <path fill="#d3b782" d="M6 8h25v16H6zm33-2h18v19H39zM4 61h35v10H4z"/>
+            <rect x="12" y="43" width="56" height="18" rx="9" fill="#424c3c"/>
+            <path fill="#738451" d="M13 39h45l8 12H9z"/><rect x="27" y="29" width="26" height="14" rx="4" fill="#87965c"/>
+            <path stroke="#647449" stroke-width="6" d="M48 34h29"/>
+            <g fill="#b5bc86"><circle cx="22" cy="53" r="4"/><circle cx="35" cy="53" r="4"/><circle cx="48" cy="53" r="4"/><circle cx="60" cy="53" r="4"/></g>
+          </svg>
+        </figure>
+        <p class="copy">The operation began Wednesday afternoon; Thursday’s news is the continuing push onto Salah al-Din road east of Nuseirat and US CENTCOM chief Admiral Brad Cooper’s visit to Israel. The IDF says it is dismantling a tunnel west of the Yellow Line. Three Palestinians were killed in separate strikes on Wednesday; Hamas calls the incursion a “flagrant” violation. <span class="proof">[BBC]</span></p>
+      </article>
+      <article class="news-card" style="--section: #0f766e">
+        <p class="kicker">3 · BUSINESS · TECH</p>
+        <h2>ANTHROPIC DEBUTS ON NASDAQ</h2>
+        <figure class="card-art ipo">
+          <figcaption class="chart-title">IPO PROCEEDS · US$bn</figcaption>
+          <svg viewBox="0 0 110 62" role="img" aria-label="Bar chart from zero: Anthropic raises 81.3 billion dollars versus SpaceX at 75 billion">
+            <path fill="#e1f3ee" d="M0 0h110v62H0z"/>
+            <path stroke="#c2d8d1" d="M8 27h94M8 3h94"/>
+            <rect x="18" y="8.22" width="29" height="48.78" rx="1" fill="#0f766e"/>
+            <rect x="64" y="12" width="29" height="45" rx="1" fill="#d58a27"/>
+            <path stroke="#3c5f59" d="M8 57h94"/>
+          </svg>
+          <div class="chart-labels"><span>Anthropic<strong>$81.3bn</strong></span><span>SpaceX<strong>$75bn</strong></span></div>
+        </figure>
+        <p class="copy">Shares begin trading Thursday as ANT after pricing at $83 on Wednesday. The $81.3 billion raised across 980 million shares makes it the largest IPO on record, ahead of SpaceX’s $75 billion debut. Valued at roughly $1.5 trillion fully diluted, Anthropic is the first frontier AI lab to list. <span class="proof">[Reuters]</span></p>
+      </article>
+      <article class="news-card" style="--section: #1d4ed8">
+        <p class="kicker">4 · EUROPE · UKRAINE WAR</p>
+        <h2>CRIMEAN BRIDGE ATTACKED AGAIN</h2>
+        <figure class="card-art">
+          <svg viewBox="0 0 110 76" role="img" aria-label="Colored bridge schematic with a broken central road span over blue water">
+            <path fill="#cde7f6" d="M0 0h110v76H0z"/><path fill="#3d98bd" d="M0 48h110v28H0z"/>
+            <path stroke="#8ed7e3" stroke-width="2" d="M3 61h22m10 8h28m15-9h29"/>
+            <path fill="#647d8c" d="M18 31h8v31h-8zm65 0h8v31h-8z"/>
+            <path fill="#e5bc67" d="M0 29h43v9H0zm69 0h41v9H69z"/>
+            <path fill="#c87a3d" d="m45 42 22 8-3 8-22-8z"/>
+            <path stroke="#718fa2" stroke-width="3" fill="none" d="M0 29Q22-6 43 29m26 0Q89-6 110 29"/>
+          </svg>
+        </figure>
+        <p class="copy">The head of Crimea says traffic was suspended after another attack on the link between Russia and occupied Crimea. It follows Tuesday’s strikes that dropped the 227-metre central road span into the sea. <span class="proof">[BBC]</span></p>
+      </article>
+      <article class="news-card" style="--section: #15803d">
+        <p class="kicker">5 · ASIA · LAW</p>
+        <h2>WORLD COURT RULES ON ROHINGYA TODAY</h2>
+        <figure class="card-art">
+          <svg viewBox="0 0 110 76" role="img" aria-label="Golden scales of justice on a green and blue background">
+            <path fill="#ddefdf" d="M0 0h110v76H0z"/><circle cx="55" cy="33" r="29" fill="#bedcdb"/>
+            <path fill="#986b25" d="M51 18h8v43h-8zM35 61h40v7H35z"/>
+            <circle cx="55" cy="16" r="6" fill="#d6a63a"/><path stroke="#aa7628" stroke-width="4" d="M19 24h72"/>
+            <path stroke="#bb8b2e" stroke-width="2" fill="none" d="m27 25-12 23h24L27 25m56 0L71 48h24L83 25"/>
+            <path fill="#e1ac3c" d="M12 48h30q-15 22-30 0m56 0h30q-15 22-30 0"/>
+          </svg>
+        </figure>
+        <p class="copy">The ICJ delivers its judgment in The Gambia v Myanmar on Thursday. No state has ever been found guilty of genocide by an international court. The 2017 campaign killed thousands, razed nearly 400 villages and drove more than 700,000 Rohingya to Bangladesh. <span class="proof">[BBC]</span></p>
+      </article>
+      <article class="news-card" style="--section: #be185d">
+        <p class="kicker">6 · CULTURE</p>
+        <h2>VAN GOGH SELLS FOR RECORD $190.4M</h2>
+        <figure class="card-art">
+          <svg viewBox="0 0 110 76" role="img" aria-label="Original colored schematic of a flowering chestnut tree">
+            <path fill="#bce1e5" d="M0 0h110v76H0z"/><path fill="#79a85c" d="M0 59q30-14 58-2t52-4v23H0z"/>
+            <path stroke="#805335" stroke-width="6" fill="none" d="M57 70 53 30m2 19L31 29m24 12 23-20"/>
+            <g fill="#47784b"><ellipse cx="32" cy="29" rx="22" ry="16"/><ellipse cx="60" cy="21" rx="23" ry="17"/><ellipse cx="81" cy="36" rx="23" ry="18"/><ellipse cx="48" cy="41" rx="22" ry="13"/></g>
+            <g fill="#fce5da"><path d="m23 14-5 16h10zm18 8-5 18h10zM59 7l-5 18h10zm19 10-5 17h10zm11 15-5 18h10zM58 29l-5 18h10z"/></g>
+            <g fill="#d49aaf"><circle cx="27" cy="38" r="3"/><circle cx="71" cy="43" r="3"/><circle cx="44" cy="14" r="3"/></g>
+          </svg>
+        </figure>
+        <p class="copy">“Châtaigniers en fleurs” sells at auction for a record $190.4 million after a row over its Nazi history. Van Gogh painted it in 1890, in the final two months of his life. <span class="proof">[BBC]</span></p>
+      </article>
+      <article class="news-card" style="--section: #b91c1c">
+        <p class="kicker">7 · WORLD · DEMOGRAPHICS</p>
+        <h2>ISLAM TO BE LARGEST FAITH BY 2035</h2>
+        <figure class="card-art">
+          <svg viewBox="0 0 110 76" role="img" aria-label="Illustrative rising lines for religious population trends; schematic, not a quantitative plot">
+            <path fill="#f4e5d5" d="M0 0h110v76H0z"/>
+            <path stroke="#dfccbb" d="M12 19h89M12 37h89M12 55h89"/>
+            <path fill="#d3e7da" d="m12 63 22-9 22-13 22-17 23-15v57H12z"/>
+            <path stroke="#15803d" stroke-width="4" fill="none" d="m12 63 22-9 22-13 22-17 23-15"/>
+            <path stroke="#1d4ed8" stroke-width="3" fill="none" d="m12 37 22-3 22-3 22-2 23-3"/>
+            <path stroke="#ce8422" stroke-width="3" fill="none" d="m12 66 22-2 22-2 22-3 23-3"/>
+            <path stroke="#8c7562" d="M12 7v62h91"/>
+          </svg>
+        </figure>
+        <p class="copy">Pew Research projects Muslims will outnumber Christians worldwide by 2035, making Islam the largest faith. Hindus will rise from 1.2 billion in 2020 to 1.4 billion by 2070. <span class="proof">[Pew]</span></p>
+      </article>
+    </section>
+    <section id="section-stories" aria-label="Seven regional stories">
+      <article class="regional-card" style="--section:#1d4ed8"><svg viewBox="0 0 36 28" aria-hidden="true"><rect width="36" height="28" rx="2" fill="#d4eafa"/><path fill="#315b93" d="M3 11 18 3l15 8v3H3zM3 23h30v3H3z"/><path fill="#ac7135" d="M7 14h4v9H7zm9 0h4v9h-4zm9 0h4v9h-4z"/></svg><p class="kicker">8 · EUROPE · EU</p><h2>DEUTSCHE BANK FACES PRIVACY PROBE</h2><p>Hesse’s data protection commissioner opens a probe into the leak of more than 15 million internal files, published 17 Nov. Reuters reports on the media evaluation Thursday; the bank says account numbers, balances and login credentials were unaffected, and shares fell 5.6%. <span class="proof">[Reuters]</span></p></article>
+      <article class="regional-card" style="--section:#b45309"><svg viewBox="0 0 36 28" aria-hidden="true"><rect width="36" height="28" rx="2" fill="#ffe1bb"/><path fill="#fffaf1" d="M17 3h10l6 6v16H17z"/><path fill="#d8a47c" d="M27 3v6h6zM21 12h8v2h-8zm0 5h8v2h-8z"/><path fill="#bb303b" d="m10 5 2 5 3-2-1 6 5-1-4 6-4-1v5H9v-5l-4 1-4-6 5 1-1-6 3 2z"/></svg><p class="kicker">9 · MIDDLE EAST</p><h2>CANADA SANCTIONS ISRAELI SETTLERS</h2><p>Canada announces sanctions targeting Israeli settlers and organisations over West Bank expansion.</p></article>
+      <article class="regional-card" style="--section:#15803d"><svg viewBox="0 0 36 28" aria-hidden="true"><rect width="36" height="28" rx="2" fill="#dbefe5"/><path fill="#456570" d="M2 5h1v19H2zm18 0h1v19h-1z"/><path fill="#fffdf7" d="M3 5h14v12H3zm18 0h14v12H21z"/><path fill="#ef9535" d="M3 5h14v4H3z"/><path fill="#168253" d="M3 13h14v4H3z"/><path fill="#193d90" d="M10 9.5a1.5 1.5 0 1 0 0 3a1.5 1.5 0 1 0 0-3"/><path fill="#be2541" d="M28 7.5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 1 0 0-7"/></svg><p class="kicker">10 · ASIA-PACIFIC</p><h2>INDIA AND JAPAN HOLD 2+2 TALKS</h2><p>Defence Minister Rajnath Singh and External Affairs Minister S. Jaishankar meet their counterparts in Tokyo, with defence and security ties at the centre.</p></article>
+      <article class="regional-card" style="--section:#b91c1c"><svg viewBox="0 0 36 28" aria-hidden="true"><rect width="36" height="28" rx="2" fill="#f4dfb2"/><path fill="#b4d58d" d="M21 0h15v28H16l4-9-4-8z"/><path fill="#b91c1c" d="M8 5a5 5 0 0 0-5 5c0 3 5 8 5 8s5-5 5-8a5 5 0 0 0-5-5"/><path fill="#215f85" d="M27 9a5 5 0 0 0-5 5c0 3 5 8 5 8s5-5 5-8a5 5 0 0 0-5-5"/><path fill="#fff" d="M8 8a2 2 0 1 0 0 4a2 2 0 1 0 0-4m19 4a2 2 0 1 0 0 4a2 2 0 1 0 0-4"/></svg><p class="kicker">11 · AFRICA</p><h2>ETHIOPIA AND ERITREA MASS FORCES AT BORDER</h2><p>ACLED and the International Crisis Group say both armies are within striking distance, fuelling fears of outright war. ReliefWeb’s Atrocity Alert No. 503, updated 19 Nov, warns of atrocity risk as clashes near disputed Badme continue. <span class="proof">[Reuters]</span></p></article>
+      <article class="regional-card" style="--section:#6d28d9"><svg viewBox="0 0 36 28" aria-hidden="true"><rect width="36" height="28" rx="2" fill="#eee3ff"/><path fill="#6054a0" d="m0 12 8-7 6 8-7 8L0 18z"/><path fill="#227f89" d="m36 11-8-6-6 9 7 6 7-3z"/><path fill="#d09060" d="m9 10 8 1 9 7-3 3-3-1-2 3-4-2-6-6z"/><path fill="#f2bf8d" d="m27 10-8-2-6 4q0 4 4 3l3-2 7 5 3-4z"/></svg><p class="kicker">12 · AMERICAS</p><h2>US AND VENEZUELA RESTORE MILITARY TIES</h2><p>The United States and Venezuela agree to restore military cooperation, including training and intelligence sharing, US Defence Secretary Pete Hegseth says.</p></article>
+      <article class="regional-card" style="--section:#0f766e"><svg viewBox="0 0 36 28" aria-hidden="true"><rect width="36" height="28" rx="2" fill="#cdebf4"/><path fill="#7fb065" d="M0 22q14-7 36 0v6H0z"/><path fill="#f1b93e" d="M7 2a4 4 0 1 0 0 8a4 4 0 1 0 0-8"/><path fill="#285089" d="M5 14h13l4 9H2z"/><path fill="#85badd" d="M4 18h16v1H4zm5-4h1l-1 9H8zm5 0h1l3 9h-1z"/><path fill="#fff" d="M27 9h2v16h-2zM27 10l-2-8 4 6 6 4-7-1-6 5z"/></svg><p class="kicker">13 · BUSINESS &amp; TECH</p><h2>AMAZON PLEDGES $7BN FOR INDIA RENEWABLES</h2><p>Amazon pledges $7 billion for renewable energy projects in India by 2030.</p></article>
+      <article class="regional-card" style="--section:#be185d"><svg viewBox="0 0 36 28" aria-hidden="true"><rect width="36" height="28" rx="2" fill="#f8dce8"/><path fill="#54376f" d="M12 7h12q6 0 8 7l2 5q0 6-5 5l-7-6h-8l-7 6q-5 1-5-5l2-5q2-7 8-7"/><path fill="#fff1df" d="M10 10h3v3h3v3h-3v3h-3v-3H7v-3h3z"/><path fill="#f8b74f" d="M25 10a2 2 0 1 0 0 4a2 2 0 1 0 0-4"/><path fill="#57c3b9" d="M29 14a2 2 0 1 0 0 4a2 2 0 1 0 0-4"/></svg><p class="kicker">14 · CULTURE &amp; SPORT</p><h2>GTA VI GETS UK RELEASE</h2><p>Grand Theft Auto VI gets a UK release after a 13-year wait for gamers around the world.</p></article>
+    </section>
+    <section id="where-it-happened">
+      <h2 class="panel-title">WHERE IT HAPPENED</h2>
+      <svg viewBox="0 0 458 102" role="img" aria-label="Dotted world map: numbered story pins show locations or geographic focus. Story 6 has no location in the source; story 7 is worldwide.">
+        <defs><pattern id="land-dots" width="3.5" height="3.5" patternUnits="userSpaceOnUse"><circle cx="1.65" cy="1.65" r="1.05" fill="#a39276"/></pattern></defs>
+        <path fill="url(#land-dots)" d="M9 20l12-9 22 1 10-6 25 2 13 8 19-3 7 6-9 8-15 1-8 8-9 3-5 7-8-1-9-8-10-1-11-11-18 2z M68 38l8 6 1 7 12 3-2 5-12-5-6-8z M89 54l10-1 8 5 13 4 1 8-9 9-4 10-12 10-4-5 3-10-4-12-8-11z M107 7l21-6 16 4-6 13-11 5-9-5z M142 31l6-9 9 1 4-9 13-7 8 4-2 10 12-8 9 1 12-8 21 1 11 2 25-3 21 3 19-2 16 7-7 6-15 4-4 9-13 1-10 13-13 3-7 10-9-3-8-10-11 2-8 14-7-2-8-13-13-1-8-8-13 2-9-6-12 4-10-3z M148 40l12-3 15 5 9 7 9 1-2 8-12 7-3 12-10 9-7-4-4-14-5-10-8-4z M193 44l9 3 5 10-7 5-6-8z M247 53l9 8 2 7 15 1 3 5-20-1-6-6z M285 75l12-6 14 3 6 6v11l-11 2-9-5-12 2-6-5z M324 95l4-7 3 1-2 8-5 3z M189 74l4-4 1 6-5 7z M287 36l4-8 3 2-1 6-6 4z"/>
+        <path d="M340 15v50" stroke="#c9bdab"/>
+        <g class="map-note"><text x="367" y="31">Location unspecified</text><text x="367" y="54">Worldwide</text></g>
+        <g class="map-pin" fill="#15803d"><path d="M268 38L263 45" stroke="#15803d" stroke-width="1.15"/><circle cx="263" cy="45" r="1.65"/><circle class="pin-head" cx="268" cy="38" r="8"/><text x="268" y="41.4">1</text></g>
+        <g class="map-pin" fill="#b45309"><path d="M181 63L185 48" stroke="#b45309" stroke-width="1.15"/><circle cx="185" cy="48" r="1.65"/><circle class="pin-head" cx="181" cy="63" r="8"/><text x="181" y="66.4">2</text></g>
+        <g class="map-pin" fill="#0f766e"><path d="M105 24L95 28" stroke="#0f766e" stroke-width="1.15"/><circle cx="95" cy="28" r="1.65"/><circle class="pin-head" cx="105" cy="24" r="8"/><text x="105" y="27.4">3</text></g>
+        <g class="map-pin" fill="#1d4ed8"><path d="M200 20L184 34" stroke="#1d4ed8" stroke-width="1.15"/><circle cx="184" cy="34" r="1.65"/><circle class="pin-head" cx="200" cy="20" r="8"/><text x="200" y="23.4">4</text></g>
+        <g class="map-pin" fill="#15803d"><path d="M249 65L245 51" stroke="#15803d" stroke-width="1.15"/><circle cx="245" cy="51" r="1.65"/><circle class="pin-head" cx="249" cy="65" r="8"/><text x="249" y="68.4">5</text></g>
+        <g class="map-pin" fill="#be185d"><path d="M355 28L355 28" stroke="#be185d" stroke-width="1.15"/><circle cx="355" cy="28" r="1.65"/><circle class="pin-head" cx="355" cy="28" r="8"/><text x="355" y="31.4">6</text></g>
+        <g class="map-pin" fill="#b91c1c"><path d="M355 51L355 51" stroke="#b91c1c" stroke-width="1.15"/><circle cx="355" cy="51" r="1.65"/><circle class="pin-head" cx="355" cy="51" r="8"/><text x="355" y="54.4">7</text></g>
+        <g class="map-pin" fill="#1d4ed8"><path d="M143 13L164 28" stroke="#1d4ed8" stroke-width="1.15"/><circle cx="164" cy="28" r="1.65"/><circle class="pin-head" cx="143" cy="13" r="8"/><text x="143" y="16.4">8</text></g>
+        <g class="map-pin" fill="#b45309"><path d="M201 55L187 46" stroke="#b45309" stroke-width="1.15"/><circle cx="187" cy="46" r="1.65"/><circle class="pin-head" cx="201" cy="55" r="8"/><text x="201" y="58.4">9</text></g>
+        <g class="map-pin" fill="#15803d"><path d="M307 30L292 34" stroke="#15803d" stroke-width="1.15"/><circle cx="292" cy="34" r="1.65"/><circle class="pin-head" cx="307" cy="30" r="8"/><text x="307" y="33.4">10</text></g>
+        <g class="map-pin" fill="#b91c1c"><path d="M190 78L185 58" stroke="#b91c1c" stroke-width="1.15"/><circle cx="185" cy="58" r="1.65"/><circle class="pin-head" cx="190" cy="78" r="8"/><text x="190" y="81.4">11</text></g>
+        <g class="map-pin" fill="#6d28d9"><path d="M75 70L94 57" stroke="#6d28d9" stroke-width="1.15"/><circle cx="94" cy="57" r="1.65"/><circle class="pin-head" cx="75" cy="70" r="8"/><text x="75" y="73.4">12</text></g>
+        <g class="map-pin" fill="#0f766e"><path d="M222 68L227 48" stroke="#0f766e" stroke-width="1.15"/><circle cx="227" cy="48" r="1.65"/><circle class="pin-head" cx="222" cy="68" r="8"/><text x="222" y="71.4">13</text></g>
+        <g class="map-pin" fill="#be185d"><path d="M131 32L152 27" stroke="#be185d" stroke-width="1.15"/><circle cx="152" cy="27" r="1.65"/><circle class="pin-head" cx="131" cy="32" r="8"/><text x="131" y="35.4">14</text></g>
+      </svg>
+      <ul class="map-legend" aria-label="Map legend">
+        <li style="--section:#1d4ed8">Europe</li>
+        <li style="--section:#b45309">Middle East</li>
+        <li style="--section:#15803d">Asia-Pacific</li>
+        <li style="--section:#b91c1c">Africa</li>
+        <li style="--section:#6d28d9">Americas</li>
+        <li style="--section:#0f766e">Business &amp; Tech</li>
+        <li style="--section:#be185d">Culture &amp; Sport</li>
+      </ul>
+    </section>
+    <section id="also-on-thursday">
+      <h2 class="panel-title">ALSO ON THURSDAY</h2>
+      <ol start="15">
+        <li><b>15</b> <strong>Carney and Trump</strong> hold an unscheduled trade meeting at the Asia summit in Shenzhen.</li>
+        <li><b>16</b> <strong>Russian drones strike Kyiv</strong> in the early hours of Thursday</li>
+        <li><b>17</b> <strong>Norway commits $600 million</strong> to support weapons from the US for Ukraine.</li>
+        <li><b>18</b> <strong>Cyclone Akvan</strong> bears down on India&#x27;s east coast</li>
+        <li><b>19</b> <strong>Bangladesh garment workers</strong> enter a third week of protests over low pay</li>
+        <li><b>20</b> <strong>Wall Street falls on hawkish Fed minutes:</strong> the Dow drops 561 points</li>
+        <li><b>21</b> <strong>Oil prices drop</strong> as improving supplies outweigh Middle East tensions.</li>
+        <li><b>22</b> <strong>McDonald&#x27;s sex-abuse case</strong> can go ahead, a judge rules</li>
+        <li><b>23</b> <strong>Russian arrested for spying</strong> on US defence company Palantir over its Ukraine support</li>
+        <li><b>24</b> <strong>Elon Musk</strong> calls record spending on the US midterms &quot;pretty foolish&quot;</li>
+        <li><b>25</b> <strong>COP31:</strong> calls grow to tax fossil-fuel windfalls to finance climate action</li>
+        <li><b>26</b> <strong>The IAEA reports</strong> North Korea is expanding its uranium-enrichment facilities</li>
+        <li><b>27</b> <strong>Earth&#x27;s &quot;missing billion years&quot; explained:</strong> mantle currents and ancient ice sheets.</li>
+        <li><b>28</b> <strong>World COPD Day</strong> highlights the importance of early diagnosis.</li>
+        <li><b>29</b> <strong>Delhi-NCR schools</strong> resume offline classes after GRAP Stage III curbs are lifted.</li>
+        <li><b>30</b> <strong>India vs New Zealand:</strong> the first Test begins in Wellington.</li>
+        <li><b>31</b> <strong>P.V. Sindhu</strong> returns to the world&#x27;s top five in badminton.</li>
+        <li><b>32</b> <strong>Defending champion Luke Littler</strong> is shocked by Jermaine Wattimena at the Grand Slam of Darts.</li>
+        <li><b>33</b> <strong>Manchester United</strong> are pursuing Como&#x27;s Nico Paz — Thursday&#x27;s gossip.</li>
+        <li><b>34</b> <strong>PM Modi</strong> gifts a golden Pichwai painting, a Banarasi silk stole and a Kashmiri carpet to world leaders.</li>
+        <li><b>35</b> <strong>Anthropic&#x27;s seven founders</strong> are about to become multi-billionaires as ANT lists.</li>
+        <li><b>36</b> <strong>Google rejects a UK request</strong> to remove a Russell Brand YouTube video, sources say.</li>
+        <li><b>37</b> <strong>A 13-year-old Hunger Games fan</strong> is to have her artwork shown on cinema screens</li>
+        <li><b>38</b> <strong>Congress targets the Modi government</strong> over inflation and seeks a white paper</li>
+        <li><b>39</b> <strong>Census 2027:</strong> the &quot;Other&quot; religions list is made predictive text</li>
+        <li><b>40</b> <strong>Pakistan&#x27;s minister</strong> to lead a delegation to Delhi for the SCO Civilisations Dialogue Forum.</li>
+        <li><b>41</b> <strong>India&#x27;s CSR spending</strong> leaves gaps in health, water security and innovation</li>
+        <li><b>42</b> <strong>Nvidia slips 2.9%</strong> after its post-results bounce fades</li>
+      </ol>
+    </section>
+    <section id="utc-timeline">
+      <h2 class="panel-title">THE DAY BY THE CLOCK</h2>
+      <ol>
+        <li><time>00:49 UTC</time>Van Gogh sells for a record $190.4m (BBC).</li>
+        <li><time>02:02 UTC</time>Air-raid alert in Kyiv as Russian drones strike.</li>
+        <li><time>04:37 UTC</time>BBC: Crimean Bridge attacked again, traffic suspended.</li>
+        <li><time>04:45 UTC</time>Trump and Xi meet in Shenzhen (12:45 WITA).</li>
+        <li><time>06:30 UTC</time>Three-way summit at Kylin Villa (14:30 WITA).</li>
+        <li><time>09:00 UTC</time>ICJ verdict on Myanmar due in The Hague (10:00 CET).</li>
+        <li><time>13:30 UTC</time>Anthropic shares begin trading on the Nasdaq (9:30 ET).</li>
+      </ol>
+    </section>
+    <footer id="date-check"><strong>DATE CHECK</strong> — Every story above happened or was first reported on Thursday 19 November
+2026. NOT included — broke before today: Jeffries nominated Speaker-designate (18 Nov;
+full House vote 3 Jan 2027) · EU €45bn Ukraine loan (proposed 18 Nov) · Anthropic IPO
+priced at $83 (18 Nov — today: the Nasdaq debut) · Fed minutes released Wednesday
+(today: markets react) · Deutsche Bank leak published (17 Nov — today: privacy probe) ·
+Voyager 1 one light-day (18 Nov) · Kerch Bridge strikes (16–17 Nov — today: ANOTHER
+attack, traffic suspended) · Ebola tally topping 11,000 (11–15 Nov) · Nvidia&#x27;s $115.84bn
+quarter (17 Nov) · GPT-6.2 Astra and Sol (17 Nov) · 69th Grammy nominations (16 Nov) ·
+US measles-free status loss (17 Nov) · Matan Kahana elected Knesset speaker (17 Nov) ·
+Mondlane trial opened (17 Nov) · UK settlement-firm sanctions (17 Nov) · Russian
+aircraft in Japanese airspace (17 Nov) · California sues OpenAI (filed Mon 16 Nov) ·
+South Africa shootings (Sun 15 Nov, reported Mon 16 Nov) · Waymo freeway suspension
+(18 Nov) · Peltola wins Alaska Senate 56–44 (18 Nov). Gaza ground operation began
+Wednesday afternoon — today: the push continues and the US CENTCOM chief visits.</footer>
+  </main>
+  </div>
+  <script>
+    (() => {
+      const frame = document.querySelector('.page-frame');
+      const width = frame.offsetWidth;
+      const height = frame.scrollHeight;
+      const fits = scale => width * scale <= 976 && height * scale <= 984;
+      let low = 0.90;
+      let high = 1;
+      for (let i = 0; i < 20; i++) {
+        const mid = (low + high) / 2;
+        if (fits(mid)) low = mid;
+        else high = mid;
+      }
+      frame.style.transform = `scale(${fits(1) ? 1 : low})`;
+    })();
+  </script>
+</body>
+</html>
