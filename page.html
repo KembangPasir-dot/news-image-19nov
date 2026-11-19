@@ -13,8 +13,12 @@
       --labels: "DejaVu Sans", sans-serif;
     }
     .masthead { display: flex; align-items: center; gap: 19px; padding: 12px 24px; background: var(--navy); color: white; }
-    .date-badge { text-align: center; padding: 9px 10px; background: #af2925; font: 700 10px/1.3 var(--labels); }
-    .date-badge strong { display: block; font: 700 21px/1.1 "DejaVu Serif", serif; margin-bottom: 4px; }
+    .mini-cal { flex: 0 0 140px; width: 140px; padding: 2px 6px; border-radius: 6px; background: #fffdf6; color: #0b1f3a; font-family: var(--labels); text-align: center; }
+    .cal-month { font-size: 11px; line-height: 10px; font-weight: 700; letter-spacing: .04em; }
+    .cal-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); color: #51483b; font-size: 7px; line-height: 7px; font-weight: 700; letter-spacing: .02em; }
+    .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); grid-auto-rows: 9px; font-size: 10px; line-height: 9px; }
+    .cal-grid .dim { color: #b8b0a0; }
+    .cal-grid .today { border-radius: 3px; background: #f97316; color: white; font-weight: 700; }
     .nameplate { color: var(--gold); font: 700 15px/1.1 var(--labels); letter-spacing: .13em; }
     h1 { margin: 2px 0 1px; font-size: 34px; line-height: 1.12; }
     .edition-note { margin: 0; color: var(--gold); font-size: 12px; font-style: italic; }
@@ -112,7 +116,18 @@
   <div class="page-frame">
   <header>
     <div class="masthead">
-      <div class="date-badge"><strong>NOV 19</strong>THU · 2026</div>
+      <div class="mini-cal" aria-label="November 2026 calendar, 19th highlighted">
+        <div class="cal-month">November 2026</div>
+        <div class="cal-weekdays"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+        <div class="cal-grid">
+          <span class="dim">26</span><span class="dim">27</span><span class="dim">28</span><span class="dim">29</span><span class="dim">30</span><span class="dim">31</span><span>1</span>
+          <span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>
+          <span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span>
+          <span>16</span><span>17</span><span>18</span><span class="today">19</span><span>20</span><span>21</span><span>22</span>
+          <span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span>
+          <span>30</span><span class="dim">1</span><span class="dim">2</span><span class="dim">3</span><span class="dim">4</span><span class="dim">5</span><span class="dim">6</span>
+        </div>
+      </div>
       <div>
         <div class="nameplate">THE WORLD IN ONE DAY</div>
         <h1>Thursday 19 November 2026</h1>
